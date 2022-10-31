@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Curra Test Invoice</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossOrigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Lexend:wght@400;500&display=swap"
+    />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <div>
+      <div class="card big-margin-top">
+        <h1>Curra Demo Invoice 🧾</h1>
+      </div>
+      <div id="content">
+        <h3>Send 1 CUR</h3>
+        <p>to</p>
+        <h3><%= address %></h3>
+      </div>
+      <script src="/scripts/web3.min.js"></script>
+      <script lang="js">
+        const web3 = new Web3("https://goerli.node.curra.io");
+        setInterval(async () => {
+          const address = "<%= address %>"
+          const block = await web3.eth.getBlockNumber()
+          const logs = await web3.eth.getPastLogs({
+            fromBlock: block,
+            toBlock: block,
+            address: "0x4A041884a1358448e18Bb29A1c36f728f494e1cE",
+          })
+
+          const [log] = logs
+          if (!log) return
+          document.getElementById('content').innerHTML = (`<div><h1>Payment received 🥳</h1><p>TX Hash: ${log.transactionHash}</p></div>`)
+        }, 3000);
+      </script>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+{
+    "http": {
+        "address": ":8080"
+    },
+    "node": {
+        "url": "https://goerli.node.curra.io"
+    },
+    "db": {
+        "path": "connector.db"
+    },
+    "transfers": {
+        "notifications": [
+            {
+                "url": "http://host.docker.internal:3000/notifications"
+            }
+        ]
+    }
+}
