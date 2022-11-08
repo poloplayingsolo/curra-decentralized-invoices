@@ -6,7 +6,7 @@
         "url": "https://goerli.node.curra.io"
     },
     "db": {
-        "path": "connector.db"
+        "path": "data/connector.db"
     },
     "transfers": {
         "notifications": [
