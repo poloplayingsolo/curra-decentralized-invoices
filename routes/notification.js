@@ -9,6 +9,7 @@ router.post("/notifications", async function (req, res, next) {
   console.log("Tx hash:", req.body.txHash);
   console.log("Token:", req.body.token);
   // your logic goes above. for example: increse user balance
+  res.end();
 });
 
 module.exports = router;
