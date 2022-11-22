@@ -6,7 +6,7 @@
     "start": "node -r dotenv/config ./bin/www"
   },
   "dependencies": {
-    "@curra/sdk": "0.0.4",
+    "@curra/sdk": "0.0.6",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "dotenv": "^16.0.3",

@@ -9,6 +9,7 @@
         "path": "data/connector.db"
     },
     "transfers": {
+        "confirmations": 3,
         "notifications": [
             {
                 "url": "http://host.docker.internal:3000/notifications"
